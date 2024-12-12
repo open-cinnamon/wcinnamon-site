@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WC#-API Documentation - KernelInterface & Kernel</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="../../../main.html">Wide Cinnamon</a></h1>
+      <h2><a href="../main.html">Documentation Home</a></h2>
+      <h2 class="under-title">WC#-API - KernelInterface & Kernel</h2>
+    </header>
+
+    <main>
+      <h2>Overview</h2>
+      <p>
+        The `KernelInterface` and `Kernel` classes provide the backbone for a
+        system capable of managing input, output, and script execution in a
+        Godot-based environment. This system acts as a virtual kernel with
+        enhanced scripting and command capabilities, allowing interaction with
+        external and internal modules.
+      </p>
+
+      <h2>Namespace</h2>
+      <p><b>Namespace:</b> `Wcinnamon.Source`</p>
+
+      <h2>Class: KernelInterface</h2>
+      <p>
+        The `KernelInterface` serves as the main interaction layer between the
+        system's core and the user. It initializes the kernel, manages input,
+        and processes commands from the user.
+      </p>
+
+      <h3>Key Properties</h3>
+      <ul>
+        <li><b>kernel:</b> The main instance of the `Kernel` class.</li>
+        <li>
+          <b>KeyTable:</b> A dictionary that maps key inputs to their
+          corresponding string values.
+        </li>
+        <li>
+          <b>StdOutWriter:</b> A static instance of the `Writer` class for
+          managing system output.
+        </li>
+        <li>
+          <b>waitingUserInput:</b> Indicates if the system is waiting for user
+          input.
+        </li>
+      </ul>
+
+      <h3>Key Methods</h3>
+      <ul>
+        <li>
+          <b>InitStdOut:</b> Initializes the output stream and sets up the
+          writer for logging messages.
+        </li>
+        <li>
+          <b>InitKernel:</b> Initializes the `Kernel` instance, connects it to
+          the output module, and logs the process.
+        </li>
+        <li>
+          <b>_Input:</b> Processes user input events, including text input,
+          command submission, and special key handling.
+        </li>
+        <li>
+          <b>Write:</b> Outputs messages to the `StandardOutput` stream with
+          optional line-ending handling.
+        </li>
+      </ul>
+
+      <h3>Usage</h3>
+      <p>
+        The `KernelInterface` class is designed to be attached to a Godot scene
+        as a script. It manages the input and output lifecycle of the system
+        during the `_Ready` and `_Input` callbacks.
+      </p>
+
+      <h2>Class: Kernel</h2>
+      <p>
+        The `Kernel` class represents the system's core, providing methods to
+        load and execute scripts or modules dynamically. It maintains a list of
+        processes and handles the execution of commands or scripts from external
+        or local sources.
+      </p>
+
+      <h3>Key Properties</h3>
+      <ul>
+        <li>
+          <b>Processes:</b> A dictionary storing all currently running
+          processes, identified by unique keys.
+        </li>
+        <li>
+          <b>AppGetPath:</b> A static reference to the directory for storing
+          applications.
+        </li>
+      </ul>
+
+      <h3>Key Methods</h3>
+      <ul>
+        <li>
+          <b>LoadExtern:</b> Loads an external script from a specified path and
+          registers it as a process.
+        </li>
+        <li>
+          <b>LoadLocal:</b> Loads a script from the local application directory
+          and registers it as a process.
+        </li>
+        <li>
+          <b>LoadProgram:</b> General method for loading and executing scripts,
+          with fallback handling for errors.
+        </li>
+        <li>
+          <b>ConnectOutput:</b> Links the kernel's output to an `OutputStream`
+          node for displaying messages.
+        </li>
+      </ul>
+
+      <h3>Usage</h3>
+      <p>
+        The `Kernel` is intended to handle script execution and system-level
+        commands. Scripts must follow a predefined structure with a `main`
+        method to be executed. This class supports loading scenes, external
+        scripts, and local modules for execution.
+      </p>
+
+      <h2>Initialization Flow</h2>
+      <ol>
+        <li>
+          <b>InitStdOut:</b> Sets up the output stream and redirects console
+          output to the `Writer`.
+        </li>
+        <li>
+          <b>InitKernel:</b> Initializes the kernel instance, connects it to the
+          output, and prepares the system for command execution.
+        </li>
+        <li>
+          <b>InitKeyTable:</b> Prepares the key mapping table for interpreting
+          user input.
+        </li>
+      </ol>
+
+      <h2>Examples</h2>
+      <h3>Basic Command Execution</h3>
+      <pre><code>// Example of loading a local scene
+kernel.LoadLocalScene("res://my_scene.tscn", new string[] { "arg1", "arg2" });</code></pre>
+
+      <h3>Running an External Script</h3>
+      <pre><code>// Example of executing an external script
+kernel.LoadProgram("path/to/script.gd", Flags.Root, new string[] { "arg1", "arg2" });</code></pre>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li>Dynamic script loading from external or local sources.</li>
+        <li>Interactive user input handling through key events.</li>
+        <li>Support for executing scenes and scripts with argument passing.</li>
+        <li>Error handling for missing scripts or invalid processes.</li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Wide Cinnamon Documentation. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

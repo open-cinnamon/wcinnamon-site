@@ -1,0 +1,151 @@
+/* Mise en forme globale */
+body {
+  font-family: Arial, sans-serif; /* Police simple et moderne */
+  background: linear-gradient(135deg, rgba(39, 173, 22, 0.9), rgba(0, 153, 136, 0.9));
+  color: #fff; /* Texte clair */
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url(../res/Pacifico-Regular.ttf) format('truetype');
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding-top: 50px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 80px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+h1 a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1 a:hover {
+  color: #00ffcc;
+}
+
+.under-title {
+  font-size: 22px;
+  color: #f0f0f0;
+  font-weight: 300;
+}
+
+/* Informations Section */
+.informations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.informations img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Features Section */
+.features {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.features p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.features ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.features li {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.features a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.features a:hover {
+  color: #fff;
+}
+
+/* Download Section */
+.download {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.download a {
+  color: #fff;
+  background-color: #00b894;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download a:hover {
+  background-color: #00a08b;
+}
+
+.devs-main {
+  text-align: center;
+}
+
+.devs-main a {
+  color: #0c2421;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.devs-main a:hover {
+  color: #2a3d3b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.download-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+}
+
+footer a {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #00ffcc;
+}

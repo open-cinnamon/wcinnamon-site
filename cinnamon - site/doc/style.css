@@ -1,0 +1,153 @@
+.doc-csharp-menu {
+  text-align: center;
+  size: 50px;
+}
+
+.doc {
+  margin: 15px;
+  background-color: rgba(18, 41, 12, 0.349);
+  border-radius: 5px;
+}
+
+.doc-text {
+  margin: 5px;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Police simple et moderne */
+  background: linear-gradient(135deg, rgba(39, 173, 22, 0.9), rgba(0, 153, 136, 0.9));
+  color: #fff; /* Texte clair */
+  margin: 0;
+  padding: 0;
+}
+
+/* General Reset */
+body, h1, h2, h3, p, ul, li, pre, code, footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+header h1, header h2, header h3 {
+  margin: 0.5rem 0;
+}
+
+header h1 a, header h2 a, header h3 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header h1 a:hover, header h2 a:hover, header h3 a:hover {
+  text-decoration: underline;
+}
+
+.under-title {
+  font-style: italic;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+ul li::before {
+  content: "• ";
+  color: #ff5722;
+  font-weight: bold;
+}
+
+pre {
+  background: #f4f4f4;
+  border-left: 4px solid #ff5722;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  background: #e8e8e8;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Links */
+a {
+  color: #ff5722;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wide Cinnamon - Doc - WC#-API/FileSystem.FileIO.Writer</title>
+    <link rel="stylesheet" href="../../../style/style.css" />
+    <link rel="stylesheet" href="../../style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="../../../main.html">Wide Cinnamon</a></h1>
+      <h2><a href="../main.html">Home Page</a></h2>
+      <h2 class="under-title">WC#-API - Wide Cinnamon's C# API</h2>
+      <h3><a href="todo">WC#-API/FileSystem</a></h3>
+    </header>
+
+    <main class="doc-text">
+      <h2>Wcinnamon.Syslib.FileSystem.FileIO.Writer</h2>
+
+      <p>
+        The <b>Writer</b> class provides functionality to write data to a file
+        using C#'s <code>System.IO.TextWriter</code> as a base. While Godot's
+        <code>FileAccess</code> class already provides robust file I/O
+        capabilities, <b>Writer</b> can be particularly useful when you need
+        enhanced interaction with standard C# libraries.
+      </p>
+
+      <h3>Namespace</h3>
+      <p><code>Wcinnamon.Syslib.FileSystem.FileIO</code></p>
+
+      <h3>Inheritance</h3>
+      <p><code>System.IO.TextWriter</code></p>
+
+      <h3>Properties</h3>
+      <ul>
+        <li>
+          <b>Encoding</b> <span>(override)</span>: Returns the encoding used for
+          writing. Defaults to <code>UTF-8</code>.
+        </li>
+      </ul>
+
+      <h3>Methods</h3>
+      <ul>
+        <li>
+          <b>Open(string path)</b>
+          <p>Opens the specified file for writing.</p>
+          <ul>
+            <li>
+              <b>Parameters:</b> <code>string path</code> - The path to the file
+              to be opened.
+            </li>
+            <li>
+              <b>Exceptions:</b> Throws an exception if the file cannot be
+              opened.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Write(char value)</b> <span>(override)</span>
+          <p>Writes a single character to the file.</p>
+          <ul>
+            <li>
+              <b>Parameters:</b> <code>char value</code> - The character to
+              write.
+            </li>
+            <li>
+              <b>Exceptions:</b> Throws
+              <code>System.NullReferenceException</code> if the file is not
+              opened.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Write(string value)</b> <span>(override)</span>
+          <p>Writes a string to the file.</p>
+          <ul>
+            <li>
+              <b>Parameters:</b> <code>string value</code> - The string to
+              write.
+            </li>
+            <li>
+              <b>Exceptions:</b> Throws
+              <code>System.NullReferenceException</code> if the file is not
+              opened.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Write(char[] buffer, int index, int count)</b>
+          <span>(override)</span>
+          <p>Writes a range of characters from a buffer to the file.</p>
+          <ul>
+            <li><b>Parameters:</b></li>
+            <ul>
+              <li>
+                <code>char[] buffer</code> - The character buffer containing
+                data to write.
+              </li>
+              <li>
+                <code>int index</code> - The starting position in the buffer.
+              </li>
+              <li>
+                <code>int count</code> - The number of characters to write.
+              </li>
+            </ul>
+            <li>
+              <b>Exceptions:</b> Throws
+              <code>System.NullReferenceException</code> if the file is not
+              opened.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Close()</b> <span>(override)</span>
+          <p>
+            Closes the currently opened file. Ensures the file is properly
+            released.
+          </p>
+        </li>
+        <li>
+          <b>Dispose(bool disposing)</b> <span>(protected override)</span>
+          <p>Disposes of the resources used by the <b>Writer</b> object.</p>
+        </li>
+      </ul>
+
+      <h3>Usage Example</h3>
+      <pre><code class="language-csharp">// Create an instance of Writer
+Writer writer = new Writer();
+
+// Open a file for writing
+writer.Open("example.txt");
+
+// Write data to the file
+writer.Write("Hello, World!");
+
+// Close the file
+writer.Close();</code></pre>
+
+      <h3>Remarks</h3>
+      <p>
+        Ensure that the <b>Open</b> method is called before attempting to write
+        data to a file. Calling <b>Write</b> methods without opening a file will
+        result in a <code>System.NullReferenceException</code>.
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Wide Cinnamon</p>
+    </footer>
+  </body>
+</html>
